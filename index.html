@@ -23,6 +23,14 @@
             display: inline-block;
             margin-right: 10px;
         }
+        .image {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            display: inline-block;
+            margin-right: 10px;
+            object-fit: cover;
+        }
     </style>
     <script>
         function getRandomColor() {
@@ -35,18 +43,30 @@
         }
 
         function makeSquare() {
-            const newSquare = document.createElement('div');
-            newSquare.className = 'square';
-            newSquare.style.backgroundColor = getRandomColor();
-            document.body.appendChild(newSquare);
+            const randomChance = Math.random();
+            
+            if (randomChance < 0.05) {
+                // 5% chance to add an image
+                const newImage = document.createElement('img');
+                newImage.className = 'image';
+                newImage.src = 'https://via.placeholder.com/200';
+                document.body.appendChild(newImage);
+            } else {
+                // 95% chance to add a square
+                const newSquare = document.createElement('div');
+                newSquare.className = 'square';
+                newSquare.style.backgroundColor = getRandomColor();
+                document.body.appendChild(newSquare);
+            }
         }
     </script>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
-    <p>This is your custom website content.</p>
+    <p>This is the start of squares.</p>
     
     <button onclick="makeSquare()">Click Me</button>
     <div id="squares-container"></div>
+    <p>This is the end of squares.</p>
 </body>
 </html>
