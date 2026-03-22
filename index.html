@@ -16,12 +16,25 @@
         button:hover {
             background-color: #0056b3;
         }
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
+    <script>
+        function makeSquare() {
+            document.getElementById('square').style.display = 'block';
+            alert('Hello! Button clicked!');
+        }
+    </script>
 </head>
 <body>
     <h1>Welcome to My Website</h1>
     <p>This is your custom website content.</p>
     
-    <button onclick="alert('Hello! Button clicked!')">Click Me</button>
+    <button onclick="makeSquare()">Click Me</button>
 </body>
 </html>
