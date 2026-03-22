@@ -19,16 +19,25 @@
         .square {
             width: 200px;
             height: 200px;
-            background-color: blue;
             margin-top: 20px;
             display: inline-block;
             margin-right: 10px;
         }
     </style>
     <script>
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         function makeSquare() {
             const newSquare = document.createElement('div');
             newSquare.className = 'square';
+            newSquare.style.backgroundColor = getRandomColor();
             document.body.appendChild(newSquare);
         }
     </script>
