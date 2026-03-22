@@ -16,18 +16,20 @@
         button:hover {
             background-color: #0056b3;
         }
-        #square {
+        .square {
             width: 200px;
             height: 200px;
             background-color: blue;
             margin-top: 20px;
-            display: none;
+            display: inline-block;
+            margin-right: 10px;
         }
     </style>
     <script>
         function makeSquare() {
-            document.getElementById('square').style.display = 'block';
-            alert('Hello! Button clicked!');
+            const newSquare = document.createElement('div');
+            newSquare.className = 'square';
+            document.body.appendChild(newSquare);
         }
     </script>
 </head>
@@ -36,6 +38,6 @@
     <p>This is your custom website content.</p>
     
     <button onclick="makeSquare()">Click Me</button>
-    <div id="square"></div>
+    <div id="squares-container"></div>
 </body>
 </html>
